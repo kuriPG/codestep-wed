@@ -1,0 +1,375 @@
+@import 'variable';
+
+/* ------------------------------
+base
+------------------------------ */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "メイリオ", sans-serif;
+  font-size: 1.4rem;
+  color: #000;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+a:link,a:visited,a:hover,a:active {
+  text-decoration: none;
+  color: #000;
+}
+li {
+  list-style: none;
+}
+*, *::before,::before {
+  box-sizing: border-box;
+}
+#header, main {
+  background-color: #f0f0f0;
+}
+/* コンテンツ */
+.wrapper {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 16px;
+  margin: $sectionM auto 0;
+}
+/* セクションタイトル */
+.section-title {
+  position: relative;
+  margin-bottom: 85px;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -36px;
+    left: 0;
+    height: 1px;
+    width: 40px;
+    background-color: #000;
+  }
+}
+.en-title {
+  font-size: 3.6rem;
+  font-weight: normal;
+  letter-spacing: 0.3em;
+}
+.ja-title {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+/* ------------------------------
+header
+------------------------------ */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $headerH;
+}
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.logo {
+  width: 100px;
+  margin-right: 60px;
+  a {
+    display: block;
+    img {
+      display: block;
+    }
+  }
+}
+.nav-list {
+  display: flex;
+}
+.nav-item {
+  margin-right: 30px;
+}
+a.contact {
+  width: 200px;
+  padding: 30px 0;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  display: block;
+  &:hover {
+    opacity: .8;
+  }
+}
+/* ------------------------------
+fv
+------------------------------ */
+.fv {
+  img {
+    width: 100%;
+    height: calc(100vh - $headerH);
+    object-fit: cover;
+  }
+}
+/* ------------------------------
+news
+------------------------------ */
+.news-list {
+  display: flex;
+}
+.news-item {
+  padding: 10px 50px 10px 20px;
+  border-right: 1px solid #000;
+  &:first-child {
+    padding-left: 0;
+  }
+  span {
+    background-color: #000;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0 7px;
+  }
+}
+.news-time {
+  margin-right: 10px;
+}
+.news-text {
+  font-size: 1.6rem;
+  margin-top: 15px;
+}
+/* ------------------------------
+about
+------------------------------ */
+#about {
+  margin-top: $sectionM;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 90px;
+}
+.about-img {
+  height: 400px;
+  margin-right: 70px;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.about-contents {
+  margin-top: 180px;
+  width: 35%;
+}
+/* ------------------------------
+business
+------------------------------ */
+.business-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.inner {
+  width: 38%;
+}
+.inner-left {
+  margin: 100px 64px 0 0 ;
+}
+.business-contents {
+  &:first-child {
+    margin-bottom: 50px;
+  }
+}
+.business-title {
+  padding-left: 20px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 8px;
+    background-color: #000;
+  }
+}
+/* ------------------------------
+company
+------------------------------ */
+#company {
+  position: relative;
+  padding-bottom: 110px;
+}
+.company-contents {
+  background-color: #fff;
+  padding: 100px 140px 100px 60px;
+  width: 60%;
+}
+.company-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  dt {
+    width: 15%;
+    margin-bottom: 10px;
+  }
+  dd {
+    width: 78%;
+    ul {
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.company-img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(calc(-50% - 50px));
+  height: 400px;
+  width: 55%;
+  img {
+    height: 100%;
+  }
+}
+/* ------------------------------
+footer
+------------------------------ */
+#footer {
+  margin: 40px auto 20px; 
+  small {
+    font-size: 1.2rem;
+  }
+}
+.footer-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+/* ------------------------------
+sp
+------------------------------ */
+@media screen and (max-width: 900px) {
+  /* ----- base ----- */
+  .wrapper {
+    margin: $sectionM_sp auto 0;
+  }
+  /* セクションタイトル */
+.section-title {
+  margin-bottom: 60px;
+  &::before {
+    bottom: -24px;
+  }
+}
+  /* ----- header ----- */
+  #header {
+    flex-direction: column;
+  }
+  a.contact {
+    display: none;
+  }
+  .header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    margin: 0 auto;
+  }
+  .logo {
+    width: 80px;
+    margin-bottom: 7px;
+  }
+  /* ----- news ----- */
+  .news-list {
+    flex-direction: column;
+  }
+  .news-item {
+    padding: 15px 0;
+    border-right: none;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  .news-time {
+    margin-right: 10px;
+  }
+  .news-text {
+    font-size: 1.6rem;
+    margin-top: 15px;
+  }
+  /* ----- about ----- */
+  #about {
+    margin-top: $sectionM_sp;
+    flex-direction: column;
+    margin-right: 0;
+  }
+  .about-img {
+    height: 300px;
+    margin-right: 0;
+    img {
+      width: 100%;
+    }
+  }
+  .about-contents {
+    margin-top: 30px;
+    width: 100%;
+    padding: 0 16px;
+  }
+  /* ----- business ----- */
+  .business-wrapper {
+    flex-direction: column;
+  }
+  .inner {
+    width: 100%;
+  }
+  .inner-left {
+    margin: 0;
+  }
+  .business-contents {
+      margin-bottom: 30px;
+  }
+  .business-title {
+    margin-bottom: 10px;
+  }
+  /* ----- company ----- */
+  #company {
+    padding-bottom: 0;
+  } 
+  .company-contents {
+    background-color: #fff;
+    padding: 40px 0 40px 20px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .company-info {
+    flex-direction: column;
+    dt {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    dd {
+      width: 100%;
+      margin-bottom: 5px;
+      ul {
+        li {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+  .company-img {
+    position: static;
+    transform: translateY(0);
+    height: 400px;
+    width: 100%;
+    img {
+      height: 100%;
+    }
+  }
+  /* ----- footer ----- */
+  .footer-contents {
+    // justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .footer-logo {
+    margin-bottom: 10px;
+  }
+}
